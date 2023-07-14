@@ -1,28 +1,92 @@
-import { useState } from "react";
+import { useState, useEffect } from "react"; //hook
 import resList from "../utils/mockData";
 import RestrauntCard from "./RestrauntCard";
+import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  const[listofRestraunts ,setListOfRestraunt] = useState(resList);
-    return (
-      <div className="body">
-        <div className="filter">
-          <button className="filter-btn" 
-          onClick={()=>{
-            const filteredList = listofRestraunts.filter(res=>res.data.avgRating>4);
-            setListOfRestraunt(filteredList);
-          }}>
-            Top Rated Restraunts</button>
-          </div>
-        <div className="res-container">
-          {
-              listofRestraunts.map(restraunt =>( 
-              <RestrauntCard key ={restraunt.data.id} resData ={restraunt} />
-              ))
-          }
-        </div>
-      </div>
+  const [listofRestraunts, setListOfRestraunt] = useState([]);
+  const [filteredRestaurant, setFilteredRestraunt] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  //Whenever state variables update, react triggers a reconciliation cycle(re-render the component)
+  console.log("Body Render");
+
+  //hook for re rendering UI after API call
+  useEffect(() => {
+    console.log("useEffect called");
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.3899664&lng=77.2979782&page_type=DESKTOP_WEB_LISTING"
     );
+
+    const json = await data.json();
+    //Optional Chaining
+    setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestraunt(json?.data?.cards[2]?.data?.data?.cards);
   };
 
-  export default Body;
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false) return <h1>Looks like you're offline!! Please check your internet connection</h1>
+
+  //Conditional Rendering
+  // if(listofRestraunts.length === 0){
+  //   return <Shimmer />
+  // }
+  return listofRestraunts.length == 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="body">
+      <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filterRestaurant = listofRestraunts.filter((res) =>
+                res.data.name.toLowerCase().includes(searchText)
+              );
+              setFilteredRestraunt(filterRestaurant);
+              console.log(searchText);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filteredList = listofRestraunts.filter(
+              (res) => res.data.avgRating > 4
+            );
+            setListOfRestraunt(filteredList);
+          }}
+        >
+          Top Rated Restraunts
+        </button>
+      </div>
+      <div className="res-container">
+        {filteredRestaurant.map((restraunt) => (
+          <Link
+            key={restraunt.data.id}
+            to={"/restaurants/" + restraunt.data.id}
+          >
+            <RestrauntCard resData={restraunt} />{" "}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Body;
