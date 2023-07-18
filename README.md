@@ -17,6 +17,70 @@ Text Power Tools
 Thunder Client
 Txt Syntax
 
+Tailwind VS Code Exntension
+Tailwind CSS intellisense
+-------------------------------------------------
+This course consist :
+React Hooks
+✅ State Management
+✅ Config Drive UI
+✅ Redux
+✅ Reusable Components
+✅ Rich and Interactive UI
+✅ Functional Comp.
+✅ Props & State
+✅ List & Keys
+✅ Class Components
+✅ Scaling React Apps
+✅ Best Coding Practices
+✅ React Router
+✅ Optimizing React Apps
+✅ Building Live Projects
+✅ Bundlers & Babel
+✅ JSX
+✅ React.Fragment
+✅ Code Splitting
+✅ Dynamic UI
+✅ Higher Order Comp.
+✅ Pure Components
+✅ Code Splitting
+✅ React Testing Library
+✅ Interview Questions
+✅ Uncontrolled Comp.
+✅ Building Custom Hooks
+✅ Handling Events
+✅ Conditional Rendering
+✅ Tailwind CSS
+and so much more
+---------------------------------
+React Interview Questions :
+
+0. What is Lifting State Up in React?
+1. What is React context?
+2. What are different ways to add CSS in your app?
+3. What is Hot Module Replacement?
+4. What is the use of Parcel, Vite, Webpack?
+5. How does create-react-app work?
+
+6. What is Tree Shaking?
+7. Difference b/w dependency and devDependency
+8. What is npx and npm?
+9. Difference b/w package .json and package-lock .json
+10. Difference between console .log(<HeaderComponent/>) and console .log(HeaderComponent());
+
+11. What is React.Fragment?
+12. What is the purpose of dependency array in useEffect? What is the difference when it is used and when it is not used?
+13. What if 2 components are given will the state change in one component will effect the other component’s state (child)?
+14. What is the use of return in useEffect ?
+15. Difference b/w client-side routing and server-side routing?
+
+16. Explain the concept of code splitting and its benefits in React.
+17. How does React handle routing and navigation?
+18. What are higher-order components (HOC) in React?
+19. What are controlled and uncontrolled components?
+20. Explain the concept of reconciliation in React.
+---------------------
+
 ----------Class-1-------------
 #Namaste React
 git init
@@ -262,3 +326,37 @@ Note : this error will come while using the lazy loading , you have to resolve u
 
 
 --Class 10 --
+These are UI CSS libraries
+-Use Styled components for CSS
+https://styled-components.com/docs/basics
+
+-material UI
+https://mui.com/
+
+-bootstrap
+https://getbootstrap.com/
+
+-chakra ui
+https://chakra-ui.com/
+
+-ant design
+https://ant.design/
+
+-Latest framework -> Tailwind CSS
+-https://tailwindcss.com/
+Tailwind CSS gives you classname automatically write in your app.
+pros :
+-You dont move between the two files.
+-pre defined css class name.
+
+cons :
+-initial learning.
+-readability issue.
+-code looks ugly.
+
+---Class 11---
+Higher Order Funtions
+Controlled Components
+Uncontrolled Components
+Lifting the state up
+Props drilling
