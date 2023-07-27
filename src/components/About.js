@@ -1,7 +1,9 @@
-import User from "./User";
+//import User from "./User";
+import UserContext from "../utils/UserContext";
 import UserClass from "./UserClass";
 //import React from "react";
 import { Component } from "react";
+//import {UserContext} from "../utils/UserContext";
 
 class About extends Component {
   constructor(props){
@@ -18,6 +20,16 @@ class About extends Component {
   return(
     <div>
       <h1>About Class Compnent</h1>
+      <div>  
+        {/* UserContext.Consumer we use as a context in class based component ,it is a compenent in which we have a callback function
+        which gets data inside it, react passes the data , it handles everything */}
+        {/* <UserContext.Consumer>
+          {({loggedInUser})=> 
+          <h1 className="text-xl font-bold">{loggedInUser}
+          </h1>
+          }
+        </UserContext.Consumer> */}
+      </div>
       <h2>This is Namasted React Web Series</h2>
       <UserClass name={"First"} location={"Faridabad Class"} />
       {/* <UserClass name={"Second"} location={"US"} />

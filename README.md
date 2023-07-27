@@ -79,6 +79,30 @@ React Interview Questions :
 18. What are higher-order components (HOC) in React?
 19. What are controlled and uncontrolled components?
 20. Explain the concept of reconciliation in React.
+1. How does React Fiber improve performance in React applications?
+2. Explain the concept of code splitting and its benefits in React.
+3. What are the key differences between server-side rendering (SSR) and client-side rendering (CSR) in React?
+4. Describe the concept of render props and its use cases in React.
+5. How can you optimize the rendering of large lists in React?
+
+6. Explain the concept of memoization and its importance in React.
+7. What is the purpose of the useEffect() hook in React and how does it work?
+8. How does React handle routing and navigation?
+9. How can you handle asynchronous operations in React using async/await?
+10. Explain the concept of the Context API in React and its benefits.
+
+11. What is the role of higher-order components (HOC) in React and how can you implement them?
+12. Describe the concept of controlled and uncontrolled components in React forms.
+13. How does React handle state management in large-scale applications?
+14. Explain the concept of suspense in React and its use cases.
+15. What are the different ways to handle side effects in React using hooks?
+
+16. Explain the concept of reconciliation in React.
+17. How can you prevent unnecessary re-renders in React?
+18. What are the different ways to style components in React?
+19. What are the key considerations when implementing a scalable React application?
+20. Describe the concept of reusability, modularity, testablity in React components.
+
 ---------------------
 
 ----------Class-1-------------
@@ -192,9 +216,13 @@ import {Component} from "path";
 -----Class-5---------------
 #React Hooks
 
-#hooks : it is a normal js utility or helper function.
--useState()032
+#hooks : it is a normal js utility or helper function.we can use  react/predefined hooks in function components only , not in class based components
+-useState()
 -useEffect()
+-useContext()
+-useParams()
+-useDispatch()
+-useNavigate()
 #State(Existing Condition): It is a basic hook which helps in maintain the states for previous value and updated value.
 
 syntax : const [state, setState] = useState(initialState);
@@ -354,9 +382,41 @@ cons :
 -readability issue.
 -code looks ugly.
 
----Class 11---
-Higher Order Funtions
-Controlled Components
-Uncontrolled Components
-Lifting the state up
-Props drilling
+-------------Class 11---------------------
+-Higher Order Funtions :
+-Controlled Components : the components which is controlled by parent components.
+-Uncontrolled Components : the components which is not controlled by parent components.
+-Lifting the state up - we use this control our children components
+-Props drilling : There are lots of components and hierachy of components , there are level of nesting compoentn
+-context API
+
+-Higher Order Funtions : takes a component and returns a component(we will use to show promoted feature on the cardss).
+It act as a enhancer function.Higher orders are pure functions, it will not change the behaviour of cards in anyway, or we are not doing any modification
+
+There are two layers in React app :
+1. UI layer(JSX) which is static.
+2. Data layer.
+
+Note* : -UI layer is powered by data layer
+        -data layer is consist of state, props , local variables
+
+We will learn how to manager your data correctly in react app in class 10.
+
+//["@type"] - when we are not proper naming convention for properties in javascript we write like this , e.g here @ coming in front of type
+
+-Props drilling : There are lots of components and hierachy of components , there are level of nesting components,
+passing data between the components , in react data flow in one way direction
+
+search in react dev documents  -> The problem with passing props
+
+React Context/Context API : removing the problem of props drilling.
+We use context as a global place where your data is kept and anybody can access it known as react context.
+
+we can use hooks in function components only , not in class based components
+
+context  has three parts :
+1.create -> check userContext.js file
+2.Read -> check header.js , about.js file
+3.Modify/Update -> check App.js file
+
+- We can provide the data for all the components or we can pass only for small portion also. Check App.js file

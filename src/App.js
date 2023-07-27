@@ -1,4 +1,4 @@
-import React,{lazy, Suspense} from "react";
+import React,{lazy, Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestrauntMenu from "./components/RestaurantMenu";
 import { createBrowserRouter ,Outlet,RouterProvider } from "react-router-dom"; //This is the recommended router for all React Router web projects. It uses the DOM History API to update the URL and manage the history stack.
+import UserContext from "./utils/UserContext";
 //import Grocery from "./components/Grocery";
 
 //Chunking
@@ -18,11 +19,36 @@ import { createBrowserRouter ,Outlet,RouterProvider } from "react-router-dom"; /
 const Grocery = lazy(()=>import("./components/Grocery"));
 
 const AppLayout = () => {
+
+  const[userName, setUserName] = useState();
+
+    //authentication
+    useEffect(()=>{
+    //Make an API call and sebd username and password
+    const data ={
+      name : "Yogesh Sharma"
+    };
+
+    setUserName(data.name)
+    });
+
   return (
-    <div className="app">
-      <Header />
-     <Outlet />
+    //this is how you modify the userContext value
+     <UserContext.Provider value ={{loggedInUser: userName, setUserName}}>
+     <div className="app">
+     <Header />
+    <Outlet />
     </div>
+    </UserContext.Provider>
+
+    //it will only passes the data to header section only , for rest component there will a default value
+    // <div className="app">
+    // <UserContext.Provider value ={{loggedInUser: userName}}>
+    //   <Header />
+    //   </UserContext.Provider>
+    //  <Outlet />
+    // </div>
+    
   );
 };
 
