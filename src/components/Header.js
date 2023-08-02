@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from  "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   //console.log("Header Render");
@@ -10,6 +11,10 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const {loggedInUser} = useContext(UserContext); // we pass this because there will me many context. it is for reading the context
+
+  //subscribing to the store using a Selector
+  // for subsrib use useSelector hook
+  const cartItems = useSelector((store)=> store.cart.items);
 
   //Three use case :
   //1. if there is no array dependenct then useEffect will be called every render.
@@ -40,7 +45,9 @@ const Header = () => {
           <li  className="px-4">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li  className="px-4">Cart</li>
+          <li  className="px-4 font-bold">
+          <Link to="/cart"> Cart - ({cartItems.length} items)</Link>
+           </li>
           <li  className="px-4">
             <button
               className="login"

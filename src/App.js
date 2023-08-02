@@ -8,6 +8,10 @@ import Error from "./components/Error";
 import RestrauntMenu from "./components/RestaurantMenu";
 import { createBrowserRouter ,Outlet,RouterProvider } from "react-router-dom"; //This is the recommended router for all React Router web projects. It uses the DOM History API to update the URL and manage the history stack.
 import UserContext from "./utils/UserContext";
+
+import {Provider} from "react-redux"
+import appStore from "./utils/Store/appStore";
+import Cart from "./components/Cart";
 //import Grocery from "./components/Grocery";
 
 //Chunking
@@ -33,13 +37,17 @@ const AppLayout = () => {
     });
 
   return (
-    //this is how you modify the userContext value
+    
+    // this is how you proivde store to the react app
+    <Provider store ={appStore}>
+      {/* //this is how you modify the userContext value */}
      <UserContext.Provider value ={{loggedInUser: userName, setUserName}}>
      <div className="app">
      <Header />
     <Outlet />
     </div>
     </UserContext.Provider>
+    </Provider>
 
     //it will only passes the data to header section only , for rest component there will a default value
     // <div className="app">
@@ -78,7 +86,11 @@ const appRouter = createBrowserRouter([
         path : "/restaurants/:resId", // resId will be dynamic
         element : <RestrauntMenu />
 
-      }
+      },
+       {
+        path :"/cart",
+        element : <Cart />
+       }
     ],
     errorElement : <Error />
   },

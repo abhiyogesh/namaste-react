@@ -19,7 +19,7 @@ Txt Syntax
 
 Tailwind VS Code Exntension
 Tailwind CSS intellisense
--------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
 This course consist :
 React Hooks
 ✅ State Management
@@ -102,89 +102,93 @@ React Interview Questions :
 18. What are the different ways to style components in React?
 19. What are the key considerations when implementing a scalable React application?
 20. Describe the concept of reusability, modularity, testablity in React components.
+21. Diff btw onClick={handleItem} , onClick ={()=> handleItem(item)}, onClick = {handleItem(item)}
+
+onClick = {handleItem(item)} // this is calling a function right away
+ onClick ={()=> handleItem(item)} // this is a callback function
 
 ---------------------
 
-----------Class-1-------------
-#Namaste React
-git init
-git branch -M main
-git add .
-git commit -m "message"
-git remote add origin "path of repository"
-git push origin main
-what is npm?
-npm full form is not node package manager ,go to npmjs.com
-npm init - will create package.json file
-why do we need Package.json file?
+# ---------------------------------Class-1------------------------------------------------------------------------------
+# Namaste React :-
+# Emmet in VS Code
+# for basic html code structure write
+# html: then enter
+# CDN - it is a place where react library hosted
+# what is CDN & why we use CDN?
+# ----------------------------------------------------------------------------------------------------------------------
+
+# git Configurations :-
+-git init
+-git branch -M main
+-git add .
+-git commit -m "message"
+-git remote add origin "path of repository"
+-git push origin main
+-what is npm?
+-npm full form is not node package manager ,go to npmjs.com
+-npm init - will create package.json file
+-why do we need Package.json file?
 -it is a configuration for npm ,
 
-what is bundler?🚀
-
+# what is bundler?🚀
 - we are using parcel bundler
-  two type of dependcies
+# two type of dependcies
 - dev(for development)
 - normal(prod)
-  -npm install -D parcel
-  -npx parcel index.html(npx- it is mean executing a package) - executing a package name
-  parcel created a server for us and hosted our app and give port 1234( http://localhost:1234)
+-npm install -D parcel
+-npx parcel index.html(npx- it is mean executing a package) - executing a package name
+-parcel created a server for us and hosted our app and give port 1234( http://localhost:1234)
 
-#Parcel Doing-
+# Parcel Doing-
 -Dev Build
-
 - Local Server
 - HMR - Hot Module Replacement( doing file watching and whenever any file changes ,automatically refreshes the page)
-  HMR uses a File Watching Algorithm - written in C++
-  -Parce is doing Caching - for Faster builds
+ # HMR uses a File Watching Algorithm - written in C++
+-Parce is doing Caching - for Faster builds
 - Image Opitimization
-  -Minification
-  -Bundling
-  -Compressing file
-  -Consistent Hashing
-  -Code Splitting
-  -Differential bundling - to support older browsers
-  -Diagnostic
-  -Error Handling
-  -Https
-  -Tree Shaking - remove unused code
+-Minification
+-Bundling
+-Compressing file
+-Consistent Hashing
+-Code Splitting
+-Differential bundling - to support older browsers
+-Diagnostic
+-Error Handling
+-Https
+-Tree Shaking - remove unused code
 - Different dev and prod bundles
-  for creating prod build(npx parcel build index.html)
-  transpiling(babel is doing)
-  difference bw tilde(~) and caret(^)
-  ^ - where there is a minor upgrade in the version , it will install the minor version not major upgrade , it install itself.
-  ~ when there is major upgrade.
+# for creating prod build(npx parcel build index.html)
+- transpiling(babel is doing)
+# difference bw tilde(~) and caret(^)
+- ^ - where there is a minor upgrade in the version , it will install the minor version not major upgrade , it install itself.
+- ~ when there is major upgrade.
 
-what is package.lock json?
+# what is package.lock json?
 -it keeps track of what version is installed in your project.
 
-what is gitignore file?
-
+# what is gitignore file?
 - it is a file which is used for ignoring any file/foler , which you dont want to push into your repository/branch.
-  -whatever you can regenerate do not push on git.
+-whatever you can regenerate do not push on git.
 
-react installation -
-
-1. npm install react
-
+# react installation -
+- npm install react
 - import in your JS file -> import React from 'react';
-  2.npm install react-dom
-  -import in your JS file ->import ReactDOM from 'react-dom/client';
+- npm install react-dom
+-import in your JS file ->import ReactDOM from 'react-dom/client';
 
-React Elements -
-An element is a plain object describing a component instance or DOM node and its desired properties. It contains only information about the component type (for example, a Button), its properties (for example, its color), and any child elements inside it.
+# React Elements -
+-An element is a plain object describing a component instance or DOM node and its desired properties. It contains only information about the component type (for example, a Button), its properties (for example, its color), and any child elements inside it.
+-React.CreateElement.
+-props - properties
 
-React.CreateElement.
-
-props - properties
-
-Components :
+# Components :
 1.Functional Components
 2.Class based Components
 
-concept called config driven UI
+#concept called config driven UI
 
-#Namaste Food
-/\*
+# Namaste Food
 *Header
 -logo
 -Nav items
@@ -200,37 +204,33 @@ _Footer
 -Contact
 _/
 
-Two Types of Export/Import
-
+# Two Types of Export/Import
 -Default Export/Import
-
-export Default component;
-import component from "path";
+-export Default component;
+-import component from "path";
 
 -Name Export/Import
+-export const Component;
+-import {Component} from "path";
 
-export const Component;
-import {Component} from "path";
 
-
------Class-5---------------
-#React Hooks
-
-#hooks : it is a normal js utility or helper function.we can use  react/predefined hooks in function components only , not in class based components
+# ------------------------------Class-5------------------------------------------------------------------------------
+# React Hooks
+-hooks : it is a normal js utility or helper function.we can use  react/predefined hooks in function components only , not in class based components
 -useState()
 -useEffect()
 -useContext()
 -useParams()
 -useDispatch()
 -useNavigate()
-#State(Existing Condition): It is a basic hook which helps in maintain the states for previous value and updated value.
+# State(Existing Condition): It is a basic hook which helps in maintain the states for previous value and updated value.
 
 syntax : const [state, setState] = useState(initialState);
 
-state : it is a variable in which any value pass.
-setState : it is a function which will update the value for state variable.
-initialState : it is the initial value for state variable.
-useState Use Cases/guidance :
+-state : it is a variable in which any value pass.
+-setState : it is a function which will update the value for state variable.
+-initialState : it is the initial value for state variable.
+# useState Use Cases/guidance :
 1.Never create the state variables outside of the component.Always call it inside the functional component.
 2.Always call and create state variables on the top of the function component(when function starts).because js is a synchronous single threaded language. it executes code line by line , so to avoid errors create on the top.
 3.Never use/create state variables with if else condition.
@@ -238,7 +238,7 @@ useState Use Cases/guidance :
 
 we useState for rerendering the component/UI
 
-Why React is so fast?
+# Why React is so fast?
 React can find out the difference B/W virtual DOMs and update them(Core of React Algorithm)
 React is fast due to DOM manupulation
 it keeps in sync your data layer & UI layer.
@@ -250,10 +250,10 @@ Diff Algorithm
 Reconciliaton algorithm/React Fiber :
 The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
 
------Class-6-----------
-Monolith vs MicroService code architecture : explore it.
+# ---------------------------------------------Class-6------------------------------------------------------------
+# Monolith vs MicroService code architecture : explore it.
 
-#useEffect hook :first the component render, as soon as render cycle finished , it calls the callback function
+# ueEffect hook :first the component render, as soon as render cycle finished , it calls the callback function
 UseEffect is called with two arguements one is callback function & other is dependency array.
 When useEffect called?
 Three cases :
@@ -267,11 +267,11 @@ Three cases :
     syntax :
     useEffect(()=>{},[]);
 
-Shimmer UI : for better user experience creates a mock up pages till api loads the data.
+# Shimmer UI : for better user experience creates a mock up pages till api loads the data.
 
 
------class-7----
-Routing :
+# --------------------------------------------------------class-7----------------------------------------------------
+# Routing :
 npm install react-router-dom (version will be 6.4)
 create a routing configuration in app.js (App router)
 check App.js file
@@ -282,14 +282,14 @@ Children routes
 Link - we use link instead of anchor tag<a> because it nor refreshes the page. (behind the scenes link using anchor tag). Link is a wrapper over anchor tag.
 Client side routing vs server side routing
 SPA
-Dynamic routing- different pages for different restraunt
+# Dynamic routing- different pages for different restraunt
 2 types of routing :
 1-Client side routing
 2-Server side routing
 
------Class-8------
+# ------------------------------------------------Class-8----------------------------------------------------
 
-Class based components :
+# Class based components :
 Asked in the interview because of old projects
 Que : why do we have to write super(props) in the classs based components?
 
@@ -327,8 +327,8 @@ why Virtual DOM is fast?
 
 */
 
------Class -9-----
-*Single Responsibility Principle 
+# -----------------------------------------Class-9---------------------==================================================
+# Single Responsibility Principle 
 -Modularity
 -Reusable
 -Maintainable
@@ -353,8 +353,8 @@ Note : this error will come while using the lazy loading , you have to resolve u
 -'fallback' in lazy uses for like spinner or loader
 
 
---Class 10 --
-These are UI CSS libraries
+# -----------------------------------------Class 10 ----------------------------------------------------------
+# These are UI CSS libraries
 -Use Styled components for CSS
 https://styled-components.com/docs/basics
 
@@ -382,7 +382,7 @@ cons :
 -readability issue.
 -code looks ugly.
 
--------------Class 11---------------------
+# -----------------------------------------------Class 11------------------------------------------------------
 -Higher Order Funtions :
 -Controlled Components : the components which is controlled by parent components.
 -Uncontrolled Components : the components which is not controlled by parent components.
@@ -419,4 +419,31 @@ context  has three parts :
 2.Read -> check header.js , about.js file
 3.Modify/Update -> check App.js file
 
-- We can provide the data for all the components or we can pass only for small portion also. Check App.js file
+- # We can provide the data for all the components or we can pass only for small portion also. Check App.js file
+
+# ----------------------------Class-12-Redux--------------------------------------------------------------------------
+- # Earlier we were using the vanilla redux in older applications
+-Zustand also a data managment library.
+-React and Redux are different libraries.
+-Redux offers easy debugging
+
+# React-Redux library is kind of a bridge between react and redux.
+
+
+# Redux Toolkit
+- Install libraries @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice(cartSlice)
+- dispatch(action)
+- Selector
+
+# reduxjs toolkit library has things to do with redux , to it will create store(ConfigureStore) and react-redux will help us in creating bridge betweeen react app and redux store (Provider)
+
+
+- # Mistakes while creating and using the store :
+- # Whenever you are doing make sure you are subscribing the right portion of the store to do the opitimizing app. -> this is for telling the interviewer for telling important point to impress. So do not subscribe full store because it will impact app's performance.
+
+- # reducer is for whole app store & reducers will have multiple functions in slice.
+- # reducer is a combination of reducers in slice.
+- # Redux  behind the scenes use the immer library for finding the difference between original state & mutate state and gives the new state which is immutable state. https://immerjs.github.io/immer/

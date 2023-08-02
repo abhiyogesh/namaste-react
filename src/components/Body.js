@@ -29,12 +29,13 @@ const Body = () => {
     );
 
     const json = await data.json();
-    //console.log('json::',json);
+    console.log('json::',json);
     //Optional Chaining
     // setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
     // setFilteredRestraunt(json?.data?.cards[2]?.data?.data?.cards);
-    setListOfRestraunt(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle.restaurants);
-    setFilteredRestraunt(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle.restaurants);
+    console.log('json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle.restaurants::',json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle.restaurants);
+    setListOfRestraunt(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle.restaurants);
+    setFilteredRestraunt(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle.restaurants);
   };
 
   const onlineStatus = useOnlineStatus();
