@@ -8,7 +8,7 @@ const RestrauntCard = (props) => {
 
   const { resData } = props;
 
-  const {loggedInUser} = useContext(UserContext)
+  const {loggedInUser} = useContext(UserContext);
   const {
     cloudinaryImageId,
     name,
@@ -22,7 +22,7 @@ const RestrauntCard = (props) => {
 deliveryTime
   } = resData?.info.sla;
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
+    <div data-testid ="resCard" className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
       <img className="res-logo rounded-lg" src={CDN_URL + cloudinaryImageId} />
       <h3 className="font-bold py-2 text-lg">{name}</h3>
       <h4 style={mystyle}>{cuisines.join(",")}</h4>

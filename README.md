@@ -16,7 +16,7 @@ Text
 Text Power Tools
 Thunder Client
 Txt Syntax
-
+vscode-icons
 Tailwind VS Code Exntension
 Tailwind CSS intellisense
 -----------------------------------------------------------------------------------------------------------------
@@ -382,7 +382,7 @@ cons :
 -readability issue.
 -code looks ugly.
 
-# -----------------------------------------------Class 11------------------------------------------------------
+# -----------------------------------------------Class 11- Data is the new oil------------------------------------
 -Higher Order Funtions :
 -Controlled Components : the components which is controlled by parent components.
 -Uncontrolled Components : the components which is not controlled by parent components.
@@ -447,3 +447,33 @@ context  has three parts :
 - # reducer is for whole app store & reducers will have multiple functions in slice.
 - # reducer is a combination of reducers in slice.
 - # Redux  behind the scenes use the immer library for finding the difference between original state & mutate state and gives the new state which is immutable state. https://immerjs.github.io/immer/
+
+
+
+# -------------------------Class 13 - Testing ---------------------------------------------------------
+ # Types of testing(developer)
+ -Unit testing - testing one component/feature in isolation -> sum.js , contact.js , header.js , restaurantCard.js
+ -Integration testing - integration of multiple components
+ -End to End - e2e testing -
+
+ https://testing-library.com/docs/react-testing-library/intro/
+
+ # React Testing Library
+ -Uses jest - delightful javascript testing framework
+
+# Setting up testing library in our app
+# Steps :-n
+ -npm install : --save-dev @testing-library/react
+ -npm install : -D jest
+ -npm install : --save-dev babel-jest @babel/core @babel/preset-env
+ -Configure Babel
+ -Configure Parcel Config file to disable default babel transpilation
+ -Writing jest Configuration : - npx jest --init -> jsdom
+ jsdom : while executing test case , there is no server running , there is not browser , these cases does not run on browser ,will not run on google chrome , they will be needing a environment , they need a runtime where these test cases will be executed.
+ -Install jsdom library : -npm install --save-dev jest-environment-jsdom
+in the folder __tests__  ' __' -> known as dunder
+-Install @babel/preset-react - to make JSX work in test cases
+-Include babel/preset-react inside my babel config
+-Install @testing-library-jest-dom 
+-When you do getAllByRole it will give you react element , react fiber node
+- it & test both are same thing
