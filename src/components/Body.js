@@ -69,7 +69,7 @@ const Body = () => {
             className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filterRestaurant = listofRestraunts.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText)
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestraunt(filterRestaurant);
               //console.log(searchText);
@@ -80,7 +80,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="px-4 py-2 bg-gray-200 rounded-lg"
+            className="px-4 py-2 rounded-lg :hover: bg-gray-200"
             onClick={() => {
               const filteredList = listofRestraunts.filter(
                 (res) => res.info.avgRating > 4
@@ -91,11 +91,11 @@ const Body = () => {
             Top Rated Restraunts
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center">
+        {/* <div className="search m-4 p-4 flex items-center">
           <label>UserName :</label>
           <input className="border border-black p-2" 
           value ={loggedInUser} onChange={(e)=>setUserName(e.target.value)} />
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restraunt) => (

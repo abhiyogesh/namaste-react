@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 import { CDN_URL } from "../utils/constants";
+import ReactTooltip from "react-tooltip";
+import {AiOutlineStar } from "react-icons/ai";
 const RestrauntCard = (props) => {
   const mystyle = {
     wordBreak: "break-word",
@@ -17,22 +19,26 @@ const RestrauntCard = (props) => {
     costForTwo,
     areaName,
   } = resData?.info;
- 
+
   const {
 deliveryTime
   } = resData?.info.sla;
   return (
-    <div data-testid ="resCard" className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
+    <div data-testid ="resCard" className="m-4 p-4 w-[240px] rounded-lg shadow-md hover:scale-105">
       <img className="res-logo rounded-lg" src={CDN_URL + cloudinaryImageId} />
       <h3 className="font-bold py-2 text-lg">{name}</h3>
-      <h4 style={mystyle}>{cuisines.join(",")}</h4>
-      <h4>{avgRating} stars</h4>
+       {/* <div>
+      <ReactTooltip>Hello</ReactTooltip>
+      </div> */}
+      <h4 className="text-ellipsis max-w-[204px] overflow-x-hidden whitespace-nowrap" >{cuisines.join(",")}
+      </h4>
       <h4>{costForTwo}</h4>
       <h4>{areaName}</h4>
       <h4>{deliveryTime} minutes</h4>
-      <h4>User : {loggedInUser}</h4>
+      <span  className="flex border border-black rounded-md w-[50px] place-content-center"><h4>{avgRating}</h4> <AiOutlineStar className="mt-[5px]" color={avgRating <= 4 ? "#32CD32" : "#FF0000"} /></span>
+      {/* <h4>User : {loggedInUser}</h4> */}
     </div>
-  );
+  )
 };
 
 //Higher Order Component

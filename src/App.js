@@ -12,6 +12,7 @@ import UserContext from "./utils/UserContext";
 import {Provider} from "react-redux"
 import appStore from "./utils/Store/appStore";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 //import Grocery from "./components/Grocery";
 
 //Chunking
@@ -44,7 +45,8 @@ const AppLayout = () => {
      <UserContext.Provider value ={{loggedInUser: userName, setUserName}}>
      <div className="app">
      <Header />
-    <Outlet />
+     <Outlet />
+     <Footer />
     </div>
     </UserContext.Provider>
     </Provider>
