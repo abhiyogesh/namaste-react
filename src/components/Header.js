@@ -1,10 +1,12 @@
 import {  useState, useContext } from "react"; // react hooks
-import { LOGO_URL } from "../utils/constants";
+import { LOG_URL} from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from  "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import { APP_URL } from "../utils/constants";
+import {logo} from '../images/food.png';
+
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   //console.log("Header Render");
@@ -25,9 +27,11 @@ const Header = () => {
   return (
     <div className="flex justify-between shadow-md h-[75px]">
       <div className="logo-container w-[100px]">
-        <Link to="/">
-          <img className="w-56" src={APP_URL} />
-        </Link>
+      {/* <img src= {logo} className="w-56"/> */}
+      {/* <img src="../images/food.png" className="w-56"/> */}
+      {/* <Link to="/">
+        <img src="../images/food.png" className="w-56"/>
+        </Link> */}
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
@@ -43,9 +47,9 @@ const Header = () => {
           <li  className="px-4">
             <Link to="/contact">Contact</Link>
           </li>
-          <li  className="px-4">
+          {/* <li  className="px-4">
             <Link to="/grocery">Grocery</Link>
-          </li>
+          </li> */}
           <li  className="px-4 font-bold">
           <Link to="/cart"> Cart - ({cartItems.length} items)</Link>
            </li>

@@ -79,11 +79,11 @@ const appRouter = createBrowserRouter([
         path : "contact",
         element : <Contact />
       },
-      {
-        path : "/grocery",
-        element :<Suspense fallback = {<h1>Loading..</h1>}> 
-        <Grocery /></Suspense>
-      },
+      // {
+      //   path : "/grocery",
+      //   element :<Suspense fallback = {<h1>Loading..</h1>}> 
+      //   <Grocery /></Suspense>
+      // },
       {
         path : "/restaurants/:resId", // resId will be dynamic
         element : <RestrauntMenu />

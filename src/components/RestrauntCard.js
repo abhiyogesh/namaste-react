@@ -26,7 +26,7 @@ deliveryTime
   return (
     <div data-testid ="resCard" className="m-4 p-4 w-[240px] rounded-lg shadow-md hover:scale-105">
       <img className="res-logo rounded-lg" src={CDN_URL + cloudinaryImageId} />
-      <h3 className="font-bold py-2 text-lg">{name}</h3>
+      <h3 className="font-bold py-2 text-lg whitespace-nowrap text-ellipsis overflow-hidden max-w-sm">{name}</h3>
        {/* <div>
       <ReactTooltip>Hello</ReactTooltip>
       </div> */}
